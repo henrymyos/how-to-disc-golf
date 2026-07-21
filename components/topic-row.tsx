@@ -11,6 +11,7 @@ export function TopicRow({
   tagline,
   accentName,
   keys,
+  num,
 }: {
   facetSlug: string;
   topicSlug: string;
@@ -18,6 +19,7 @@ export function TopicRow({
   tagline: string;
   accentName: string;
   keys: string[];
+  num?: string;
 }) {
   const { countDone } = useProgress();
   const a = accent(accentName);
@@ -31,7 +33,14 @@ export function TopicRow({
     >
       <div className="flex items-center justify-between gap-4">
         <div className="min-w-0">
-          <h3 className="font-semibold">{title}</h3>
+          <h3 className="font-semibold">
+            {num && (
+              <span className="mr-2 font-semibold tabular-nums text-zinc-400 dark:text-zinc-500">
+                {num}
+              </span>
+            )}
+            {title}
+          </h3>
           <p className="mt-0.5 truncate text-sm text-zinc-600 dark:text-zinc-400">{tagline}</p>
         </div>
         <span

@@ -29,6 +29,7 @@ export default async function FacetPage({
   const facet = getFacet(facetSlug);
   if (!facet) notFound();
   const a = accent(facet.accent);
+  const facetNum = FACETS.findIndex((f) => f.slug === facet.slug) + 1;
 
   return (
     <div className="space-y-6">
@@ -51,7 +52,7 @@ export default async function FacetPage({
       </div>
 
       <div className="space-y-3">
-        {facet.topics.map((t) => (
+        {facet.topics.map((t, ti) => (
           <TopicRow
             key={t.slug}
             facetSlug={facet.slug}
@@ -60,6 +61,7 @@ export default async function FacetPage({
             tagline={t.tagline}
             accentName={facet.accent}
             keys={topicKeys(facet, t.slug)}
+            num={`${facetNum}.${ti + 1}`}
           />
         ))}
       </div>
