@@ -6,7 +6,7 @@ export const gettingStarted: Facet = {
   emoji: "🥏",
   accent: "emerald",
   summary:
-    "What disc golf is, how a round actually works, and the unwritten rules that make you welcome on any course.",
+    "Everything else builds on this. Understanding how the game works — and being comfortable on any course, with any group — is what gets you playing enough rounds for the rest of your game to grow.",
   topics: [
     {
       slug: "what-is-disc-golf",

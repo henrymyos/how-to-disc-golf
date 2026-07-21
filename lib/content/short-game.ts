@@ -6,7 +6,7 @@ export const shortGame: Facet = {
   emoji: "🎯",
   accent: "violet",
   summary:
-    "Putting, approaches, and the touch shots that turn threes into twos — where scores are actually made.",
+    "More than half your strokes happen inside 100 feet, so this is where scores actually drop. A reliable short game turns three shots into two on nearly every hole — no other skill lowers your average faster.",
   topics: [
     {
       slug: "putting",

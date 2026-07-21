@@ -6,7 +6,7 @@ export const rulesAndCompetition: Facet = {
   emoji: "📋",
   accent: "rose",
   summary:
-    "Scoring, penalties, formats, and the path from casual rounds to sanctioned tournaments and a PDGA rating.",
+    "Knowing the rules saves real strokes — penalties you avoid, relief you're entitled to, rulings you get right. And competition is the sport's best accelerator: leagues and tournaments push every other part of your game forward.",
   topics: [
     {
       slug: "rules-and-scoring",

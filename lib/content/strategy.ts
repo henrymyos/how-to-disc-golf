@@ -6,7 +6,7 @@ export const strategy: Facet = {
   emoji: "🧠",
   accent: "amber",
   summary:
-    "Shot selection, wind, terrain, and risk management — how to score better without throwing better.",
+    "The fastest strokes you'll ever save, because they cost zero practice hours. Good decisions — right disc, right line, right risk — routinely beat better throwing, and most blow-up holes start with a bad choice, not a bad throw.",
   topics: [
     {
       slug: "shot-selection",

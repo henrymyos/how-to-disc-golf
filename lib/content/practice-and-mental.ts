@@ -6,7 +6,7 @@ export const practiceAndMental: Facet = {
   emoji: "🧘",
   accent: "teal",
   summary:
-    "How to structure practice that sticks, and the between-the-ears skills that hold up when it counts.",
+    "This section decides whether any of the others actually improve. Structured practice is what converts knowledge into skill, and the mental game is what lets that skill show up when the round is on the line.",
   topics: [
     {
       slug: "practice-structure",

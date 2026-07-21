@@ -6,7 +6,7 @@ export const throwing: Facet = {
   emoji: "💪",
   accent: "orange",
   summary:
-    "Grip, backhand, forehand, and the footwork that turns arm throws into full-body power.",
+    "This is the engine of your game — clean throwing mechanics set the ceiling on everything else. Every foot of controlled distance you add makes every hole shorter, every line reachable, and every other skill easier to use.",
   topics: [
     {
       slug: "grip",

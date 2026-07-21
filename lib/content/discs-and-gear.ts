@@ -6,7 +6,7 @@ export const discsAndGear: Facet = {
   emoji: "🎒",
   accent: "sky",
   summary:
-    "Disc types, flight numbers, plastics, and how to build a bag that actually fits your arm.",
+    "The wrong discs actively slow your learning — they hide form errors and fly nothing like their ratings promise. Matching discs to your actual arm speed gives you honest feedback on every throw and free distance on top.",
   topics: [
     {
       slug: "disc-types",
