@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { FACETS, getTopic, sectionKey } from "@/lib/content";
 import { accent } from "@/components/accents";
 import { SectionView } from "@/components/section-view";
+import { CompleteButton } from "@/components/complete-button";
 
 export function generateStaticParams() {
   return FACETS.flatMap((f) =>
@@ -95,25 +96,31 @@ export default async function SectionPage({
             ← {topic.title}
           </Link>
         )}
-        {nextSection ? (
-          <Link
-            href={`/${facet.slug}/${topic.slug}/${nextSection.id}`}
-            className="text-sm font-medium hover:underline"
-          >
-            {nextSection.title} →
-          </Link>
-        ) : nextTopic ? (
-          <Link
-            href={`/${facet.slug}/${nextTopic.slug}`}
-            className="text-sm font-medium hover:underline"
-          >
-            Next topic: {nextTopic.title} →
-          </Link>
-        ) : (
-          <Link href={`/${facet.slug}`} className="text-sm font-medium hover:underline">
-            Back to {facet.title} →
-          </Link>
-        )}
+        <div className="flex items-center gap-4">
+          <CompleteButton
+            sectionKey={sectionKey(facet.slug, topic.slug, section.id)}
+            accentName={facet.accent}
+          />
+          {nextSection ? (
+            <Link
+              href={`/${facet.slug}/${topic.slug}/${nextSection.id}`}
+              className="text-sm font-medium hover:underline"
+            >
+              {nextSection.title} →
+            </Link>
+          ) : nextTopic ? (
+            <Link
+              href={`/${facet.slug}/${nextTopic.slug}`}
+              className="text-sm font-medium hover:underline"
+            >
+              Next topic: {nextTopic.title} →
+            </Link>
+          ) : (
+            <Link href={`/${facet.slug}`} className="text-sm font-medium hover:underline">
+              Back to {facet.title} →
+            </Link>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -14,7 +14,7 @@ export function SectionView({
   sectionKey: string;
   accentName: string;
 }) {
-  const { done, toggle } = useProgress();
+  const { done } = useProgress();
   const a = accent(accentName);
   const complete = done.has(sectionKey);
 
@@ -26,23 +26,12 @@ export function SectionView({
           : "border-zinc-200 dark:border-zinc-800"
       }`}
     >
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <div className="flex items-center gap-3">
-          <span className={`rounded-full px-2.5 py-1 text-xs font-semibold ${a.chip}`}>
-            {DEPTH_LABELS[section.depth]}
-          </span>
-          <h2 className="text-lg font-bold">{section.title}</h2>
-        </div>
-        <button
-          onClick={() => toggle(sectionKey)}
-          className={`rounded-full px-3.5 py-1.5 text-sm font-semibold transition ${
-            complete
-              ? `${a.chip}`
-              : "border border-zinc-300 text-zinc-600 hover:bg-zinc-100 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-800"
-          }`}
-        >
-          {complete ? "✓ Completed" : "Mark complete"}
-        </button>
+      <div className="flex flex-wrap items-center gap-3">
+        <span className={`rounded-full px-2.5 py-1 text-xs font-semibold ${a.chip}`}>
+          {DEPTH_LABELS[section.depth]}
+        </span>
+        <h2 className="text-lg font-bold">{section.title}</h2>
+        {complete && <span className={`text-sm font-semibold ${a.text}`}>✓</span>}
       </div>
 
       <div className="mt-5 space-y-4">
