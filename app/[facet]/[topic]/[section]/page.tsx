@@ -5,6 +5,7 @@ import { FACETS, getTopic, sectionKey } from "@/lib/content";
 import { accent } from "@/components/accents";
 import { SectionView } from "@/components/section-view";
 import { CompleteButton } from "@/components/complete-button";
+import { FacetOutline } from "@/components/facet-outline";
 
 export function generateStaticParams() {
   return FACETS.flatMap((f) =>
@@ -51,8 +52,19 @@ export default async function SectionPage({
     !nextSection && tIdx < facet.topics.length - 1 ? facet.topics[tIdx + 1] : null;
 
   return (
-    <div className="mx-auto max-w-3xl space-y-6">
-      <nav className="text-sm text-zinc-500 dark:text-zinc-400">
+    <div className="lg:grid lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-10">
+      <aside className="hidden lg:block">
+        <div className="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pb-4 pr-1">
+          <FacetOutline
+            facetSlug={facet.slug}
+            currentTopic={topic.slug}
+            currentSection={section.id}
+          />
+        </div>
+      </aside>
+
+      <div className="mx-auto w-full max-w-3xl space-y-6">
+        <nav className="text-sm text-zinc-500 dark:text-zinc-400">
         <Link href="/" className="hover:underline">
           All facets
         </Link>{" "}
@@ -121,6 +133,7 @@ export default async function SectionPage({
             </Link>
           )}
         </div>
+      </div>
       </div>
     </div>
   );

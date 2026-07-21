@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { FACETS, getTopic, sectionKey } from "@/lib/content";
 import { accent } from "@/components/accents";
 import { SectionRow } from "@/components/section-row";
+import { FacetOutline } from "@/components/facet-outline";
 
 export function generateStaticParams() {
   return FACETS.flatMap((f) =>
@@ -43,7 +44,14 @@ export default async function TopicPage({
   const nextFacet = !next && facetIdx < FACETS.length - 1 ? FACETS[facetIdx + 1] : null;
 
   return (
-    <div className="space-y-6">
+    <div className="lg:grid lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-10">
+      <aside className="hidden lg:block">
+        <div className="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pb-4 pr-1">
+          <FacetOutline facetSlug={facet.slug} currentTopic={topic.slug} />
+        </div>
+      </aside>
+
+      <div className="space-y-6">
       <nav className="text-sm text-zinc-500 dark:text-zinc-400">
         <Link href="/" className="hover:underline">
           All facets
@@ -100,6 +108,7 @@ export default async function TopicPage({
             Back to all facets →
           </Link>
         )}
+      </div>
       </div>
     </div>
   );
