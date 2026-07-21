@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { FACETS, getTopic, sectionKey } from "@/lib/content";
 import { accent } from "@/components/accents";
-import { SectionView } from "@/components/section-view";
+import { SectionRow } from "@/components/section-row";
 
 export function generateStaticParams() {
   return FACETS.flatMap((f) =>
@@ -59,18 +59,20 @@ export default async function TopicPage({
         <h1 className="text-3xl font-black tracking-tight">{topic.title}</h1>
         <p className={`mt-1.5 font-medium ${a.text}`}>{topic.tagline}</p>
         <p className="mt-2 text-sm text-zinc-500 dark:text-zinc-400">
-          Read as deep as you like — each level stands on its own. Mark a level complete to
-          track it on your progress rings.
+          Three levels — go as deep as you like. Each one is its own short page.
         </p>
       </div>
 
-      <div className="space-y-5">
+      <div className="space-y-3">
         {topic.sections.map((s) => (
-          <SectionView
+          <SectionRow
             key={s.id}
-            section={s}
+            href={`/${facet.slug}/${topic.slug}/${s.id}`}
+            title={s.title}
+            depth={s.depth}
             sectionKey={sectionKey(facet.slug, topic.slug, s.id)}
             accentName={facet.accent}
+            preview={s.body[0] ?? ""}
           />
         ))}
       </div>

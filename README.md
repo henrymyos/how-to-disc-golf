@@ -22,9 +22,10 @@ levels of depth:
 | 📋 Rules & Competition | Rules & scoring · OB & penalties · Formats & events |
 | 🧘 Practice & Mental Game | Practice structure · Field work · Mental game |
 
-Every lesson mixes forms: written explanation, key-point cards, practice drills, and
-video links featuring pros (Gannon Buhr, Simon Lizotte, Paul McBeth) and teaching
-channels (Overthrow Disc Golf, Robbie C, Danny Lindahl).
+Each depth level is its own page — short lead-in, scannable bullets, key-point cards,
+practice drills, and video links featuring pros (Gannon Buhr, Simon Lizotte, Paul McBeth)
+and teaching channels (Overthrow Disc Golf, Robbie C, Danny Lindahl) — with prev/next
+navigation that walks you through a topic lesson by lesson.
 
 **Video links are curated YouTube searches, not hardcoded video URLs** — so they never
 go stale. Swap any of them for exact video URLs in `lib/content/*.ts` if you have favorites.

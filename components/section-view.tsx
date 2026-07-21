@@ -45,16 +45,27 @@ export function SectionView({
         </button>
       </div>
 
-      <div className="mt-4 space-y-3">
+      <div className="mt-5 space-y-4">
         {section.body.map((p, i) => (
-          <p key={i} className="leading-relaxed text-zinc-700 dark:text-zinc-300">
+          <p key={i} className="text-[1.02rem] leading-7 text-zinc-700 dark:text-zinc-300">
             {p}
           </p>
         ))}
       </div>
 
+      {section.bullets && (
+        <ul className="mt-5 space-y-3.5">
+          {section.bullets.map((b, i) => (
+            <li key={i} className="flex gap-3 leading-7 text-zinc-700 dark:text-zinc-300">
+              <span className={`mt-0.5 select-none font-bold ${a.text}`}>•</span>
+              <span>{b}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+
       {section.points && (
-        <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+        <ul className="mt-6 grid gap-3 sm:grid-cols-2">
           {section.points.map((pt) => (
             <li
               key={pt.title}
@@ -68,7 +79,7 @@ export function SectionView({
       )}
 
       {section.drills && (
-        <div className="mt-5 rounded-xl border border-dashed border-zinc-300 p-4 dark:border-zinc-700">
+        <div className="mt-6 rounded-xl border border-dashed border-zinc-300 p-4 dark:border-zinc-700">
           <h3 className="text-sm font-bold uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
             🏋️ Drills
           </h3>
@@ -84,7 +95,7 @@ export function SectionView({
       )}
 
       {section.videos && (
-        <div className="mt-5">
+        <div className="mt-6">
           <h3 className="text-sm font-bold uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
             🎬 Watch
           </h3>

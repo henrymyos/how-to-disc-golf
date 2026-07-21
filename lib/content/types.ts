@@ -13,7 +13,10 @@ export type Section = {
   title: string;
   /** 1 = The Basics, 2 = Going Deeper, 3 = In Depth */
   depth: 1 | 2 | 3;
+  /** Short lead-in — one or two sentences setting up the idea */
   body: string[];
+  /** The substance, one self-contained idea per bullet */
+  bullets?: string[];
   points?: { title: string; text: string }[];
   drills?: string[];
   videos?: VideoLink[];
